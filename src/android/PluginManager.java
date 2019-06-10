@@ -59,7 +59,9 @@ public class PluginManager {
     private static final String NOTIFICATION_SOUND = "com.urbanairship.notification_sound";
     static final String AUTO_LAUNCH_MESSAGE_CENTER = "com.urbanairship.auto_launch_message_center";
     private static final String ENABLE_ANALYTICS = "com.urbanairship.enable_analytics";
+
     private static final String NOTIFICATION_OPT_IN_STATUS_EVENT_PREFERENCES_KEY = "com.urbanairship.notification_opt_in_status_preferences";
+    private static final String DEFAULT_NOTIFICATION_CHANNEL_ID = "com.urbanairship.default_notification_channel_id";
 
     private static PluginManager instance;
     private final Object lock = new Object();
@@ -154,6 +156,25 @@ public class PluginManager {
                     .apply();
             notifyListener(new NotificationOptInEvent(optIn));
         }
+    }
+
+    /**
+     * Gets the default notification channel ID.
+     * @param context The application context.
+     * @return The default notifiation channel ID.
+     */
+    @Nullable
+    public String getDefaultNotificationChannelId(Context context) {
+        return sharedPreferences.getString(DEFAULT_NOTIFICATION_CHANNEL_ID, null);
+    }
+
+    /**
+     * Sets the default notification channel ID.
+     * @param context The application context.
+     * @param value The value.
+     */
+    public void setDefaultNotificationChannelId(Context context, @Nullable String value) {
+        sharedPreferences.edit().putString(DEFAULT_NOTIFICATION_CHANNEL_ID, value).apply();
     }
 
     /**
