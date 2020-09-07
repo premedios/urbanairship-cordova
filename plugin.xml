@@ -13,7 +13,7 @@
     <engines>
         <engine name="cordova-android" version=">=4.1.0"/>
         <engine name="cordova-ios" version=">=5.0.1"/>
-        <engine name="cordova" version=">=9.0.1"/>
+        <!-- <engine name="cordova" version=">=9.0.1"/> -->
     </engines>
 
     <js-module name="UrbanAirship" src="www/UrbanAirship.js">
@@ -184,14 +184,15 @@
         <source-file src="src/ios/events/UACordovaShowInboxEvent.m"/>
 
         <!-- Airship library -->
-        <podspec>
+        <framework src="Airship" type="podspec" spec="14.0.0" />
+        <!-- <podspec>
             <config>
                 <source url="https://github.com/CocoaPods/Specs.git"/>
             </config>
             <pods use-frameworks="true">
                 <pod name="Airship" spec="13.3.2" />
             </pods>
-        </podspec>
+        </podspec> -->
 
     </platform>
 </plugin>
