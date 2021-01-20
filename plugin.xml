@@ -184,7 +184,7 @@
         <source-file src="src/ios/events/UACordovaShowInboxEvent.m"/>
 
         <!-- Airship library -->
-        <framework src="Airship" type="podspec" spec="14.0.0" />
+        <framework src="Airship" type="podspec" spec="14.0.1" />
         <!-- <podspec>
             <config>
                 <source url="https://github.com/CocoaPods/Specs.git"/>
